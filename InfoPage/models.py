@@ -12,6 +12,7 @@ class student_name(models.Model):
 		return self.pub_date >= timezone.now() - datetime.timedelta(days=1)
 
 class Specialisation(models.Model):
+	student=models.ForeignKey(student_name, on_delete=models.CASCADE, default=0)
 	spec_text = models.CharField(max_length=500)
 	def __str__(self):
 		return self.spec_text
