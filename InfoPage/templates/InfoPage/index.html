@@ -1,0 +1,9 @@
+{% if latest_student_added %}
+    <ul>
+    {% for student_name in latest_student_added %}
+        <li><a href="/students/{{ user.id }}/">{{ student_name.student_name }}</a></li>
+    {% endfor %}
+    </ul>
+{% else %}
+    <p>Invalid.</p>
+{% endif %}
