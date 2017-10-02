@@ -1,8 +1,8 @@
 from django.http import HttpResponse
-
 from django.template import loader
-
 from .models import student_name
+
+# creates a view the user views
 
 def index(request):
     latest_student_added = student_name.objects.order_by('-pub_date')[:5]
